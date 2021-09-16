@@ -1,12 +1,16 @@
-export const counterDefault = {
+type CounterDefaultTypes = {
+  counter: number;
+};
+
+export const counterDefault: CounterDefaultTypes = {
   counter: 1,
 };
 
-export const COUNTER_INC = "@count/COUNTER_INC";
-export const COUNTER_DEC = "@count/COUNTER_DEC";
-export const COUNTER_RESET = "@count/COUNTER_RESET";
+export const COUNTER_INC = '@count/COUNTER_INC';
+export const COUNTER_DEC = '@count/COUNTER_DEC';
+export const COUNTER_RESET = '@count/COUNTER_RESET';
 
-const counterReducer = (state = counterDefault, action) => {
+const counterReducer = (state = counterDefault, action: any) => {
   switch (action.type) {
     case COUNTER_INC:
       return {

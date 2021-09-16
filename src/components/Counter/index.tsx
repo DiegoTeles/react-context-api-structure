@@ -1,13 +1,13 @@
-import ConnectTo from "../../store/connect";
-import { getPokeAction } from "../../store/pokemons/pokeAction";
+import ConnectTo from '../../store/connect';
+import { getPokeAction } from '../../store/pokemons/pokeAction';
 import {
   decrementAction,
   incrementAction,
   resetAction,
-} from "../../store/counter/counter";
-import { useEffect } from "react";
+} from '../../store/counter/counter';
+import { useEffect } from 'react';
 
-const Counter = ({ dispatch, counter, pokemons }) => {
+const Counter = ({ dispatch, counter, pokemons }: any) => {
   const incrementHandler = () => dispatch(incrementAction());
   const decrementHandler = () => dispatch(decrementAction());
   const resetHandler = () => dispatch(resetAction());

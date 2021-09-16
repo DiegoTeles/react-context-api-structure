@@ -1,17 +1,16 @@
-import useCombineReducers from "./hooks/useCombineReducers";
-import { StoreContext } from "./hooks/useStore";
-import middleware from "./middleware";
+import useCombineReducers from './hooks/useCombineReducers';
+import { StoreContext } from './hooks/useStore';
+import middleware from './middleware';
 
-const Provider = ({ children }) => {
+const Provider = ({ children }: any) => {
   const { store, reducers } = useCombineReducers();
-
-  const triggerDispatchs = (action) => {
+  const triggerDispatchs = (action: any) => {
     for (let i = 0; i < reducers.length; i++) {
       reducers[i](action);
     }
   };
 
-  const withMiddleware = async (action) => {
+  const withMiddleware = async (action: any) => {
     await middleware(action)(triggerDispatchs);
   };
 
